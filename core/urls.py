@@ -1,7 +1,7 @@
+from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from django.urls import path
 from django.contrib.sitemaps import Sitemap
-from django.views.generic import TemplateView
+from django.urls import path, include
 
 
 class StaticViewSitemap(Sitemap):
@@ -18,7 +18,11 @@ sitemaps = {
 
 
 urlpatterns = [
-    # مسیرهای قبلی
+    path("admin/", admin.site.urls),
+
+    path("", include("core.urls")),
+
+    path("contact/", include("contact.urls")),  # اگر اپ contact داری
 
     path(
         "sitemap.xml",
