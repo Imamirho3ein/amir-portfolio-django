@@ -103,7 +103,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-STATIC_URL = 'static/'
+
 
 
 # Email
@@ -114,11 +114,6 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 ALLOWED_HOSTS = [
@@ -129,4 +124,11 @@ ALLOWED_HOSTS = [
     "amir-portfolio-django.onrender.com",
     "localhost",
     "127.0.0.1",
+]
+STATIC_URL = "static/"
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
 ]
