@@ -110,17 +110,10 @@ USE_TZ = True
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-]
 ALLOWED_HOSTS = [
     "amir-portfolio-django.onrender.com",
     "localhost",
