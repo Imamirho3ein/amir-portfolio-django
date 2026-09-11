@@ -1,0 +1,347 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home | My Portfolio
+{% endblock %}
+
+{% block content %}
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <p class="eyebrow">
+                HELLO, I'M
+            </p>
+
+            {% if profile %}
+
+            <h1>
+                {{ profile.full_name }}
+            </h1>
+
+            <h2>
+                {{ profile.job_title }}
+            </h2>
+
+            <p class="hero-description">
+                {{ profile.bio }}
+            </p>
+
+            {% else %}
+
+            <h1>
+                Your Name
+            </h1>
+
+            <h2>
+                Python & Django Developer
+            </h2>
+
+            <p class="hero-description">
+                I build modern, scalable and high-performance
+                web applications using Python and Django.
+            </p>
+
+            {% endif %}
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            {% if profile and profile.profile_image %}
+
+            <img
+                src="{{ profile.profile_image.url }}"
+                alt="{{ profile.full_name }}"
+                class="profile-image"
+            >
+
+            {% endif %}
+
+            {% if profile and profile.cv_file %}
+
+            <a
+                href="{{ profile.cv_file.url }}"
+                class="btn btn-secondary"
+                download>
+
+                Download CV
+
+            </a>
+
+            {% endif %}
+
+            <div class="hero-card">
+                <div class="card-dot"></div>
+
+                <div class="code-line short"></div>
+                <div class="code-line"></div>
+                <div class="code-line medium"></div>
+                <div class="code-line"></div>
+                <div class="code-line short"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about section reveal" id="about">
+
+    <div class="container">
+
+        <p class="section-label">
+            ABOUT ME
+        </p>
+
+        <h2 class="section-title">
+            Turning ideas into digital experiences.
+        </h2>
+
+        <p class="section-description">
+            I'm a developer focused on building clean,
+            powerful and user-friendly web applications.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="skills section reveal" id="skills">
+
+    <div class="container">
+
+        <p class="section-label">
+            SKILLS
+        </p>
+
+        <h2 class="section-title">
+            What I work with.
+        </h2>
+
+        <div class="skills-grid">
+
+            {% for skill in skills %}
+
+            <div class="skill-card">
+
+                <h3>
+                    {{ skill.name }}
+                </h3>
+
+                <div class="skill-bar">
+                    <span style="width: {{ skill.percentage }}%;"></span>
+                </div>
+
+                <p>
+                    {{ skill.percentage }}%
+                </p>
+
+            </div>
+
+            {% empty %}
+
+            <p>
+                No skills added yet.
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="projects section reveal" id="projects">
+
+    <div class="container">
+
+        <p class="section-label">
+            PROJECTS
+        </p>
+
+        <h2 class="section-title">
+            Selected work.
+        </h2>
+
+        <div class="projects-grid">
+
+            {% for project in projects %}
+
+            <article class="project-card">
+
+                {% if project.image %}
+
+                <img
+                    src="{{ project.image.url }}"
+                    alt="{{ project.title }}"
+                    class="project-img"
+                >
+
+                {% else %}
+
+                <div class="project-image">
+                    PROJECT
+                </div>
+
+                {% endif %}
+
+
+                <div class="project-content">
+
+                    <h3>
+                        {{ project.title }}
+                    </h3>
+
+
+                    <p>
+                        {{ project.description }}
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        {% for tech in project.tech_list %}
+
+                        <span>
+                            {{ tech }}
+                        </span>
+
+                        {% endfor %}
+
+                    </div>
+
+
+                    <div class="project-links">
+
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" target="_blank">
+                            GitHub
+                        </a>
+                        {% endif %}
+
+
+                        {% if project.demo_url %}
+                        <a href="{{ project.demo_url }}" target="_blank">
+                            Live Demo
+                        </a>
+                        {% endif %}
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+            {% empty %}
+
+            <p>
+                No projects added yet.
+            </p>
+
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+<section class="experience section reveal" id="experience">
+
+    <div class="container">
+
+        <p class="section-label">
+            EXPERIENCE
+        </p>
+
+        <h2 class="section-title">
+            My professional journey.
+        </h2>
+
+
+        <div class="experience-list">
+
+            {% for exp in experiences %}
+
+            <div class="experience-card">
+
+                <h3>
+                    {{ exp.job_title }}
+                </h3>
+
+                <h4>
+                    {{ exp.company }}
+                </h4>
+
+                <p>
+                    {{ exp.description }}
+                </p>
+
+                <span>
+                    {{ exp.start_date }}
+                    -
+                    {% if exp.is_current %}
+                        Present
+                    {% else %}
+                        {{ exp.end_date }}
+                    {% endif %}
+                </span>
+
+            </div>
+
+            {% empty %}
+
+            <p>
+                No experience added yet.
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact section reveal" id="contact">
+
+    <div class="container">
+
+        <p class="section-label">
+            CONTACT
+        </p>
+
+        <h2 class="section-title">
+            Let's build something great.
+        </h2>
+
+        <a href="mailto:hello@example.com" class="btn btn-primary">
+            Get In Touch
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

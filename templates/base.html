@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Amir - Python Django Developer. Professional portfolio, projects and web development experience.">
+    >
+    <meta name="author"
+    content="Amir">
+    <meta property="og:title"
+    content="Amir | Python Django Developer">
+    
+    
+    <meta property="og:description"
+    content="Professional portfolio website showcasing Django projects and skills.">
+    
+    
+    <meta property="og:type"
+    content="website">
+    
+    
+    <meta property="og:url"
+    content="https://your-domain.com">
+    <title>{% block title %}My Portfolio{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container navbar-content">
+
+            <a href="/" class="logo">
+                Portfolio<span>.</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle dark mode"
+            >
+                ☾
+            </button>
+
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                © {% now "Y" %} My Portfolio. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
