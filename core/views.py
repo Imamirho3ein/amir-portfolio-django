@@ -7,18 +7,17 @@ from projects.models import Skill, Project
 def home(request):
 
     profile = Profile.objects.first()
-
     skills = Skill.objects.all()
-
     projects = Project.objects.all()
 
     for project in projects:
-        project.tech_list = project.technologies.split()
+        if project.technologies:
+            project.tech_list = project.technologies.split()
+        else:
+            project.tech_list = []
 
     experiences = Experience.objects.all()
-
     educations = Education.objects.all()
-
 
     context = {
         "profile": profile,
@@ -27,7 +26,6 @@ def home(request):
         "experiences": experiences,
         "educations": educations,
     }
-
 
     return render(
         request,
