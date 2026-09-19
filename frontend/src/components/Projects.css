@@ -1,0 +1,439 @@
+.projects-section {
+    padding: 120px 20px;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(139,92,246,.18),
+            transparent 45%
+        ),
+        #08080d;
+    color:white;
+}
+
+
+.projects-container {
+    max-width:1200px;
+    margin:auto;
+}
+
+
+
+.projects-heading {
+    text-align:center;
+    margin-bottom:70px;
+}
+
+
+.section-label {
+    display:inline-block;
+    color:#a78bfa;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+
+.projects-heading h2 {
+    margin:0;
+    font-size:54px;
+    color:white;
+    letter-spacing:-1px;
+}
+
+
+.projects-heading h2 span {
+    color:#8b5cf6;
+}
+
+
+
+
+
+.projects-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:32px;
+
+}
+
+
+
+
+
+.project-card {
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.02)
+    );
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(12px);
+
+    transition:.4s ease;
+
+}
+
+
+
+
+
+.project-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(139,92,246,.25),
+        transparent 35%
+    );
+
+    opacity:0;
+
+    transition:.4s ease;
+
+}
+
+
+
+
+.project-card:hover {
+
+    transform:
+    translateY(-12px);
+
+    border-color:
+    rgba(139,92,246,.6);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.45);
+
+}
+
+
+
+.project-card:hover::before {
+
+    opacity:1;
+
+}
+
+
+
+
+
+.project-card-main {
+
+    display:block;
+
+    color:inherit;
+
+    text-decoration:none;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+
+
+
+.project-image {
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s ease;
+
+}
+
+
+
+
+
+.project-card:hover .project-image {
+
+    transform:scale(1.06);
+
+}
+
+
+
+
+
+.project-placeholder {
+
+    height:280px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #181225,
+        #09090b
+    );
+
+    color:#a78bfa;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+
+
+
+
+.project-content {
+
+    padding:30px;
+
+}
+
+
+
+
+
+.project-content h3 {
+
+    margin:0 0 14px;
+
+    color:white;
+
+    font-size:26px;
+
+}
+
+
+
+
+
+.project-content p {
+
+    color:#a1a1aa;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+.project-tags {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+
+
+
+
+.project-tags span {
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:
+    rgba(139,92,246,.12);
+
+    border:
+    1px solid rgba(139,92,246,.3);
+
+    color:#ddd6fe;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+.project-links {
+
+    display:flex;
+
+    gap:12px;
+
+    padding:
+
+    0 30px 30px;
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+
+
+
+
+.project-links a {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+
+    12px 18px;
+
+
+    border-radius:14px;
+
+
+    background:
+
+    rgba(255,255,255,.05);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+
+    color:#ddd;
+
+
+    text-decoration:none;
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.project-links a:hover {
+
+    background:#8b5cf6;
+
+    color:white;
+
+    transform:
+    translateY(-3px);
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+.projects-section{
+
+    padding:80px 16px;
+
+}
+
+
+.projects-heading h2{
+
+    font-size:38px;
+
+}
+
+
+
+.projects-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.project-image,
+.project-placeholder{
+
+    height:220px;
+
+}
+
+
+
+}
+
+.project-placeholder {
+    width: 100%;
+    height: 265px !important;
+    min-height: 265px !important;
+    max-height: 265px !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+.project-image {
+    width: 100%;
+    height: 265px !important;
+    min-height: 265px !important;
+    max-height: 265px !important;
+
+    object-fit: cover;
+    display: block;
+}

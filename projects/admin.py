@@ -1,38 +1,85 @@
 from django.contrib import admin
+
 from .models import Project
+
 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
 
+
     list_display = (
         "title",
+        "project_type",
         "created_at",
     )
+
 
     search_fields = (
         "title",
-        "description",
         "technologies",
+        "project_type",
     )
+
 
     list_filter = (
         "created_at",
+        "project_type",
     )
+
 
     readonly_fields = (
-        "image_preview",
+        "created_at",
     )
 
 
-    def image_preview(self, obj):
+    fieldsets = (
 
-        if obj.image:
+        (
+            "Basic Information",
+            {
+                "fields": (
+                    "title",
+                    "description",
+                    "short_description",
+                    "image",
+                )
+            }
+        ),
 
-            return f'<img src="{obj.image.url}" width="200" />'
 
-        return "No image"
+        (
+            "Project Details",
+            {
+                "fields": (
+                    "full_description",
+                    "features",
+                    "challenges",
+                    "project_type",
+                )
+            }
+        ),
 
 
-    image_preview.allow_tags = True
-    image_preview.short_description = "Preview"
+        (
+            "Technology & Links",
+            {
+                "fields": (
+                    "technologies",
+                    "github_url",
+                    "demo_url",
+                )
+            }
+        ),
+
+
+        (
+            "Metadata",
+            {
+                "fields": (
+                    "created_at",
+                )
+            }
+        ),
+
+    )

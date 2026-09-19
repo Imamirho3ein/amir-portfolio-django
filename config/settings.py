@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'accounts',
     'contact',
     'django.contrib.sitemaps',
+    "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -37,6 +39,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -127,3 +131,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+CORS_ALLOW_ALL_ORIGINS = True
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"

@@ -1,0 +1,218 @@
+.experience-section {
+    position: relative;
+    padding: 140px 24px;
+    background: #08080d;
+    overflow: hidden;
+    color: white;
+}
+
+.experience-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: -280px;
+    top: 20%;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.10);
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+.experience-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience-heading {
+    margin-bottom: 70px;
+}
+
+.experience-heading h2 {
+    margin: 0;
+    color: white;
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.experience-heading h2 span {
+    background: linear-gradient(
+        135deg,
+        #a78bfa,
+        #6366f1,
+        #38bdf8
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.experience-list {
+    position: relative;
+}
+
+.experience-list::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgba(139, 92, 246, 0),
+        rgba(139, 92, 246, 0.45),
+        rgba(56, 189, 248, 0)
+    );
+}
+
+.experience-card {
+    position: relative;
+    display: flex;
+    gap: 35px;
+    margin-bottom: 28px;
+}
+
+.experience-card:last-child {
+    margin-bottom: 0;
+}
+
+.experience-dot {
+    position: relative;
+    z-index: 2;
+    width: 31px;
+    height: 31px;
+    flex-shrink: 0;
+    margin-top: 25px;
+    border: 1px solid rgba(167, 139, 250, 0.45);
+    border-radius: 50%;
+    background: #0d0d13;
+    box-shadow:
+        0 0 0 7px rgba(124, 58, 237, 0.06),
+        0 0 25px rgba(124, 58, 237, 0.25);
+}
+
+.experience-dot::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: #a78bfa;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.7);
+}
+
+.experience-content {
+    flex: 1;
+    padding: 28px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(15px);
+    transition: 0.3s ease;
+}
+
+.experience-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.35);
+    background: rgba(139, 92, 246, 0.035);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+}
+
+.experience-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.experience-top h3 {
+    margin: 0 0 7px;
+    color: #f4f4f5;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.experience-company {
+    color: #a78bfa;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.experience-current {
+    padding: 7px 12px;
+    border: 1px solid rgba(34, 197, 94, 0.20);
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.08);
+    color: #86efac;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.experience-date {
+    margin-top: 16px;
+    color: #71717a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.experience-content > p {
+    margin: 18px 0 0;
+    color: #92929f;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+@media (max-width: 650px) {
+
+    .experience-section {
+        padding: 90px 16px;
+    }
+
+    .experience-heading {
+        margin-bottom: 50px;
+    }
+
+    .experience-heading h2 {
+        font-size: 42px;
+    }
+
+    .experience-card {
+        gap: 18px;
+    }
+
+    .experience-dot {
+        width: 25px;
+        height: 25px;
+        margin-top: 22px;
+    }
+
+    .experience-dot::after {
+        width: 7px;
+        height: 7px;
+    }
+
+    .experience-list::before {
+        left: 12px;
+    }
+
+    .experience-content {
+        padding: 22px;
+    }
+
+    .experience-top {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .experience-top h3 {
+        font-size: 19px;
+    }
+
+}

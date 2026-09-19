@@ -1,0 +1,140 @@
+.education-section {
+    position: relative;
+    padding: 140px 24px;
+    background: #0a0a0f;
+    overflow: hidden;
+    color: white;
+}
+
+.education-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -250px;
+    top: 15%;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.08);
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+.education-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.education-heading {
+    margin-bottom: 70px;
+}
+
+.education-heading h2 {
+    margin: 0;
+    color: white;
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.education-heading h2 span {
+    background: linear-gradient(
+        135deg,
+        #a78bfa,
+        #6366f1,
+        #38bdf8
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education-card {
+    position: relative;
+}
+
+.education-content {
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(15px);
+    transition: 0.3s ease;
+}
+
+.education-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.30);
+    background: rgba(56, 189, 248, 0.025);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+}
+
+.education-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.education-top h3 {
+    margin: 0 0 8px;
+    color: #f4f4f5;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.education-field {
+    color: #a78bfa;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.education-institution {
+    margin-top: 18px;
+    color: #d4d4d8;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.education-date {
+    margin-top: 10px;
+    color: #71717a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.education-content p {
+    margin: 18px 0 0;
+    color: #92929f;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+@media (max-width: 650px) {
+
+    .education-section {
+        padding: 90px 16px;
+    }
+
+    .education-heading {
+        margin-bottom: 50px;
+    }
+
+    .education-heading h2 {
+        font-size: 42px;
+    }
+
+    .education-content {
+        padding: 23px;
+    }
+
+    .education-top h3 {
+        font-size: 19px;
+    }
+
+}
