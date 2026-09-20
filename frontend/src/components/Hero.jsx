@@ -1,13 +1,9 @@
 import { ArrowDown, Mail, Code2 } from "lucide-react";
-
 import { motion } from "framer-motion";
-
 import { useEffect, useState } from "react";
-
 import axios from "axios";
-
+import API_BASE_URL from "../api";
 import "./Hero.css";
-
 
 function Hero() {
 
@@ -15,29 +11,20 @@ function Hero() {
 
 
     useEffect(() => {
-
         axios
-            .get("http://127.0.0.1:8000/api/profile/")
+            .get(`${API_BASE_URL}/api/profile/`)
             .then((response) => {
-
                 if (response.data.length > 0) {
-
                     setProfile(response.data[0]);
-
                 }
-
             })
             .catch((error) => {
-
                 console.log(
                     "Profile API Error:",
                     error
                 );
-
             });
-
     }, []);
-
 
     return (
 
