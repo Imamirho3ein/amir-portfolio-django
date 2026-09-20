@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 
+import API_BASE_URL from "../api";
+
 import "./Contact.css";
 
 
@@ -32,7 +34,7 @@ function Contact() {
     useEffect(() => {
 
         axios
-            .get("http://127.0.0.1:8000/api/profile/")
+            .get(`${API_BASE_URL}/api/profile/`)
             .then((response) => {
 
                 if (response.data.length > 0) {
@@ -74,7 +76,7 @@ function Contact() {
         try {
 
             await axios.post(
-                "http://127.0.0.1:8000/contact/api/",
+                `${API_BASE_URL}/contact/api/`,
                 formData
             );
 

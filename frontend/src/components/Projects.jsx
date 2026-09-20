@@ -9,7 +9,7 @@ import {
 
 import { motion } from "framer-motion";
 
-import axios from "axios";
+import API_BASE_URL from "../api";
 
 import "./Projects.css";
 
@@ -22,7 +22,7 @@ function Projects() {
     useEffect(() => {
 
         axios
-            .get("http://127.0.0.1:8000/api/projects/")
+            .get(`${API_BASE_URL}/api/projects/`)
             .then((response) => {
 
                 setProjects(response.data);
