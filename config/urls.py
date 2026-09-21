@@ -55,7 +55,21 @@ urlpatterns = [
     path(
     "api/",
     include("accounts.urls")
-),
+    ),
+
+    path(
+    "api/accounts/",
+    include("accounts.urls")
+    ),
+
+    path("api/projects/",
+    include("projects.urls")
+    ),
+    
+    path(
+    "api/contact/",
+    include("contact.urls")
+    ),
 
 ]
 
